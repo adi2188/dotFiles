@@ -32,7 +32,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
-set mouse=a
 filetype plugin indent on
 autocmd filetype python set expandtab
 
