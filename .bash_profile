@@ -1,7 +1,12 @@
+HOME=/Users/akulka3
+export HOME
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
-
+export PATH="/Users/akulka3/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+export PS1="[\u@\h \W] ⚽︎  "
 alias desk='cd ~/Desktop'
 alias up='cd ..'
 function cdl { cd $1; ls;}
@@ -13,10 +18,29 @@ alias la='ls -lhAG'
 alias ls="ls -G"
 alias pg='ps axw | grep -i'
 alias plg='port list | grep -i'
+alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+alias hgrep='history | grep '"${1}"''
+
+mvnrun () {
+    echo mvn $@
+    eval mvn $@
+    echo mvn $@
+}
+
+alias mci='mvnrun clean install'
+alias mcist='mvnrun clean install -Dmaven.test.skip=true $@'
+alias mt='mvnrun test $@'
+alias mc='mvnrun clean $@'
+alias mct='mvnrun clean test $@'
+alias mist='mvnrun install -Dmaven.test.skip=true $@'
 
 lsnet(){ 
         lsof -i  | awk '{printf("%-14s%-20s%s\n", $10, $1, $9)}' | sort 
 }
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -25,3 +49,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+if [ -e /Users/akulka3/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/akulka3/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
