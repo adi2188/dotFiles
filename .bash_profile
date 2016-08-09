@@ -1,4 +1,4 @@
-HOME=/Users/akulka3
+HOME=/Users/adityakulkarni
 export HOME
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
@@ -6,7 +6,7 @@ export PATH
 export STORM_HOME=$HOME/apache-storm-0.10.0
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH:$STORM_HOME/bin
-export PATH="/Users/akulka3/.pyenv/bin:$PATH"
+export PATH="/Users/adityakulkarni/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PS1="[\u@\h \W] 🏏  "
@@ -57,4 +57,4 @@ done
 unset file
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-if [ -e /Users/akulka3/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/akulka3/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/adityakulkarni/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/adityakulkarni/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
