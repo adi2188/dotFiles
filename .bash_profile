@@ -41,8 +41,8 @@ lsnet(){
         lsof -i  | awk '{printf("%-14s%-20s%s\n", $10, $1, $9)}' | sort 
 }
 
-function mosh_to { mosh vmktg-$1.sv.walmartlabs.com;}
-function connect { ssh vmktg-$1.sv.walmartlabs.com;}
+function mosh_to { mosh $1;}
+function connect { ssh $1;}
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
