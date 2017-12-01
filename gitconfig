@@ -1,0 +1,55 @@
+[user]
+	email = aditya.kulkarni@drawbridge.com
+	name = Aditya Kulkarni
+[core]
+	excludesfile = /Users/adityak/.gitignore_global
+	preloadindex = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+    dfcl = diff --full-index --cached HEAD^
+    dfc = diff --full-index --cached
+	co = checkout
+	st = status
+	ci = commit
+    br = branch
+    f = fetch
+    upa = fetch --all
+    cpk = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
+    cpq = cherry-pick --quit
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    rbm = rebase master
+    df = diff
+    dc = diff --cached
+    lg = log -p
+    who = shortlog -s --
+    pr = pull --rebase
+    up = !git fetch origin
+	uprbm = !git fetch origin && git rebase origin/master
+    rbi = rebase -i
+    rbim = rebase -i origin/master
+    rbm = rebase -p origin/master
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbs = rebase --skip
+    rb = rebase -p
+    ci = commit
+    ciam = commit --amend
+    to = push
+    thistom = push origin HEAD:master
+    cr = push gerrit HEAD:refs/for/master
+	praise = blame
+[commit]
+	template = /Users/adityak/.stCommitMsg
+[gc]
+	auto = 256
+[http]
+	postBuffer = 1048576000
+[sequence]
