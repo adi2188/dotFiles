@@ -1,6 +1,5 @@
-HOME=/Users/adityak
+HOME=/Users/aditya
 export HOME
-export ADSYMP_SRC_TRUNK=/Users/adityak/workspace/drawbridge
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
@@ -8,8 +7,8 @@ export STORM_HOME=$HOME/apache-storm-0.10.0
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export GOPATH=/usr/local/go/bin
 export PATH=$JAVA_HOME/bin:$PATH:$STORM_HOME/bin
-export PATH="/Users/adityak/.pyenv/bin:$PATH"
-export GITAWAREPROMPT=/Users/adityak/.adibash/git-aware-prompt
+export PATH="/Users/aditya/.pyenv/bin:$PATH"
+export GITAWAREPROMPT=/Users/aditya/.adibash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -32,8 +31,6 @@ alias manu='clear; ls -lhAG'
 alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 alias hgrep='history | grep '"${1}"''
 
-# alias sshooz='ssh -i ~/.ssh/key-oozie -l oozie -o StrictHostKeyChecking=no'
-alias fbb='fab build_branch'
 alias self='cd ~/self'
 alias whoworkshard='git log --since="last 2 weeks" | grep "^Author: " | sort | uniq -c | sort -n -r'
 alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
@@ -41,7 +38,7 @@ alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 alias setJdk9='export JAVA_HOME=$(/usr/libexec/java_home -v '9*')'
 
-alias fsql='/Users/adityak/go/bin/fsql'
+alias fsql='/Users/aditya/go/bin/fsql'
 
 function cdl { cd $1; la;}
 mvnrun () {
@@ -84,7 +81,7 @@ done
 unset file
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-if [ -e /Users/adityak/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/adityak/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/aditya/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/aditya/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
