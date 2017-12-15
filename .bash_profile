@@ -8,14 +8,18 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export GOPATH=/usr/local/go/bin
 export PATH=$JAVA_HOME/bin:$PATH:$STORM_HOME/bin
 export PATH="/Users/aditya/.pyenv/bin:$PATH"
-export GITAWAREPROMPT=/Users/aditya/.adibash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
+#export GITAWAREPROMPT=/Users/aditya/.adibash/git-aware-prompt
+#source "${GITAWAREPROMPT}/main.sh"
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="[\u@\h \[$txtgrn\]\W\[$txtrst\]] \[$txtylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] ▹ "
+
+#parse_git_branch() {
+#    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#}
+
+#export PS1="[\u@\h \[$txtgrn\]\W\[$txtrst\]] \[$txtylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] ▹ "
+
 alias desk='cd ~/Desktop'
 alias up='cd ..'
 function upn(){ for i in `seq $1`; do cd ..; done;}
@@ -38,7 +42,7 @@ alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 alias setJdk9='export JAVA_HOME=$(/usr/libexec/java_home -v '9*')'
 
-alias fsql='/Users/aditya/go/bin/fsql'
+#alias fsql='/Users/aditya/go/bin/fsql'
 
 function cdl { cd $1; la;}
 mvnrun () {
@@ -85,3 +89,12 @@ if [ -e /Users/aditya/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/aditya/
 
 export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+source ~/.git_prompt
+export GIT_PS1_SHOWCOLORHINTS=true
+# Terminal Prompt:
+# Include git branch, use PROMPT_COMMAND (not PS1) to get color output (see git-prompt.sh for more)
+export PROMPT_COMMAND='__git_ps1 "\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\W \[\033[00m\]" "\\\$ "' # Git branch (relies on git-prompt.sh)
+export GIT_PS1_SHOWDIRTYSTATE=true
+#export GIT_PS1_SHOWUNTRACKEDFILES=false
+export GIT_PS1_SHOWUPSTREAM="auto"
