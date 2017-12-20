@@ -1,5 +1,5 @@
 [user]
-	email = aditya.kulkarni@drawbridge.com
+	email = <myemail>
 	name = Aditya Kulkarni
 [core]
 	excludesfile = /Users/adityak/.gitignore_global
@@ -47,7 +47,7 @@
     cr = push gerrit HEAD:refs/for/master
 	praise = blame
 [commit]
-	template = /Users/adityak/.stCommitMsg
+	template = /Users/aditya/.stCommitMsg
 [gc]
 	auto = 256
 [http]
