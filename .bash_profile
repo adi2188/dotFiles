@@ -75,8 +75,17 @@ ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the curr
 ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
 
+#   ---------------------------
+#   SMART UTILS
+#   ---------------------------
 
-#alias fsql='/Users/aditya/go/bin/fsql'
+# using brew install get
+# 1. ack
+# 2. ag (Silver Searcher)
+# 3. fpp (Facebook PathPicker)
+# 4. fsql (File SQL)
+
+alias pick='fpp'
 
 #   -----------------------------
 #   MAVEN GRADLE BUILDS
