@@ -20,13 +20,43 @@ eval "$(pyenv virtualenv-init -)"
 
 #export PS1="[\u@\h \[$txtgrn\]\W\[$txtrst\]] \[$txtylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] ▹ "
 
+#   -----------------------------
+#   VELOCITY
+#   -----------------------------
+
+alias whoworkshard='git log --since="last 2 weeks" | grep "^Author: " | sort | uniq -c | sort -n -r'
+
+#   -----------------------------
+#   SET JAVA
+#   -----------------------------
+
+alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
+alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias setJdk9='export JAVA_HOME=$(/usr/libexec/java_home -v '9*')'
+
+#   -----------------------------
+#   MAKE TERMINAL BETTER
+#   -----------------------------
+
+
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation 
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias less='less -FSRXc'                    # Preferred 'less' implementation
+alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
+alias ~="cd ~"                              # ~:            Go Home
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+alias show_options='shopt'                  # Show_options: display bash options settings
+alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
+cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias desk='cd ~/Desktop'
 alias up='cd ..'
 function upn(){ for i in `seq $1`; do cd ..; done;}
 function makego { mkdir $1; cd $1;}
 alias cl='clear; ls -lhG'
 alias cla='clear; ls -lhAG'
-alias ll='ls -lhG'
 alias la='ls -lhAG $LS_COLOR'
 alias ls="ls -G"
 alias pg='ps axw | grep -i'
@@ -34,15 +64,24 @@ alias plg='port list | grep -i'
 alias manu='clear; ls -lhAG'
 alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 alias hgrep='history | grep '"${1}"''
-
 alias self='cd ~/self'
-alias whoworkshard='git log --since="last 2 weeks" | grep "^Author: " | sort | uniq -c | sort -n -r'
-alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
-alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
-alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-alias setJdk9='export JAVA_HOME=$(/usr/libexec/java_home -v '9*')'
+
+#   ---------------------------
+#   SEARCHING
+#   ---------------------------
+
+alias qfind="find . -name "                 # qfind:    Quickly search for file
+ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
+ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
+ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
+
 
 #alias fsql='/Users/aditya/go/bin/fsql'
+
+#   -----------------------------
+#   MAVEN GRADLE BUILDS
+#   -----------------------------
+
 
 function cdl { cd $1; la;}
 mvnrun () {
