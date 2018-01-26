@@ -1,0 +1,7 @@
+alias shive='hive -S -e'
+alias hls="hadoop fs -ls"
+alias hmkdir="hadoop fs -mkdir"
+alias hcp="hadoop fs -cp"
+alias hmv="hadoop fs -mv"
+alias hcopyToLocal="hadoop fs -copyToLocal"
+alias hput="hadoop fs -put"
