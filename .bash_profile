@@ -84,9 +84,12 @@ ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name end
 # 2. ag (Silver Searcher)
 # 3. fpp (Facebook PathPicker)
 # 4. fsql (File SQL)
+# 5. brew install tree
+# 6. brew install cask
+# 7. brew install hub (for github.com)
 
 alias pick='fpp'
-
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 #   -----------------------------
 #   MAVEN GRADLE BUILDS
 #   -----------------------------
